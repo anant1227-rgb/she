@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For You My Vaani Batra 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .slide { display: none; }
+    .slide.active {
+      display: block;
+      animation: fade 0.6s ease;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-rose-100 via-pink-100 to-red-100 flex items-center justify-center px-4">
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="https://archive.org/download/mi-amor-sharn/Mi%20Amor%20-%20Sharn.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="bg-white/80 backdrop-blur-md rounded-3xl shadow-xl p-8 max-w-xl w-full text-center">
+
+    <div class="slide active">
+      <p class="text-gray-700 text-lg">
+        Hey 🤍  
+        ek choti si baat hai  
+        m zada time ni lunga i know ye tumhe cringe lgra h.
+      </p>
+    </div>
+
+    <div class="slide">
+      <p class="text-gray-700 text-lg">
+        thank you, first of all
+        for being there at the end of this year
+      </p>
+    </div>
+
+    <div class="slide">
+      <p class="text-gray-700 text-lg">
+        Tumhari presence 🌸  
+        cheezon ko simple  
+        aur moments ko better bana deti hai.
+      </p>
+    </div>
+
+    <div class="slide">
+      <p class="text-gray-700 text-lg">
+        Bs tu time se online aa jaya krr
+        m yehi chahta huu
+      </p>
+    </div>
+
+    <div class="slide">
+      <p class="text-gray-700 text-lg">
+        No drama.  
+        No fake promises.  
+        Bas itna —  
+        <b>tum matter karti ho.</b>
+      </p>
+    </div>
+
+
+    <br><br>
+    Thank you 🤍
+  </p>
+</div>
+
+
+    <button onclick="nextSlide()"
+      class="mt-6 px-6 py-2 rounded-full bg-rose-400 text-white text-sm hover:bg-rose-500 transition">
+      Next →
+    </button>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const music = document.getElementById('bgMusic');
+    let started = false;
+
+    function nextSlide() {
+      if (!started) {
+        music.volume = 0.5;
+        music.play();
+        started = true;
+      }
+
+      slides[currentSlide].classList.remove('active');
+      currentSlide++;
+
+      if (currentSlide >= slides.length) {
+        currentSlide = slides.length - 1;
+        return;
+      }
+
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
